@@ -57,3 +57,31 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Structure Folders
+src/
+└── app/
+    ├── core/
+    │   ├── services/
+    │   │   └── finance.service.ts
+    │   └── material.module.ts      # QUAN TRỌNG: Nơi tập trung import tất cả MatModules
+    ├── shared/
+    │   ├── components/
+    │   │   ├── base-card/          # Dùng <mat-card> làm khung chung
+    │   │   └── transaction-item/   # Một dòng hiển thị trong "Ghi chép gần đây"
+    │   └── pipes/
+    │       └── vnd-currency.pipe.ts
+    ├── features/
+    │   ├── dashboard/
+    │   │   ├── components/
+    │   │   │   ├── balance-card/    # Thẻ "Tổng số dư" (dùng mat-card-content)
+    │   │   │   ├── chart-container/ # Bọc biểu đồ trong mat-card
+    │   │   │   └── recent-history/  # Dùng <mat-list> và <mat-list-item>
+    │   │   └── dashboard.component.ts
+    │   ├── transaction-dialog/     # Component cho Dialog "Thêm ghi chép"
+    │   └── ...
+    ├── layout/
+    │   ├── sidebar/                # Sử dụng <mat-nav-list> inside <mat-sidenav>
+    │   ├── header/                 # Sử dụng <mat-toolbar>
+    │   └── main-layout/            # Sử dụng <mat-sidenav-container>
+    └── app.module.ts               # Import MaterialModule vào đây
