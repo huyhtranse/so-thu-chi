@@ -1,0 +1,47 @@
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; // Toàn bộ chiều cao trình duyệt
+  width: 100vw;
+  overflow: hidden;
+}
+
+.app-header-container {
+  flex: 0 0 auto; // Header không co giãn, giữ nguyên chiều cao (thường là 64px)
+  z-index: 1001;  // Đảm bảo header nằm trên cùng
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.app-sidenav-container {
+  flex: 1; // Chiếm toàn bộ phần còn lại bên dưới header
+}
+
+.app-sidebar {
+  width: 240px;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0 !important;
+
+  .sidebar-content {
+    padding: 16px;
+
+    .btn-add {
+      width: 100%;
+      margin-bottom: 16px;
+      border-radius: 8px;
+      background-color: #0089ff; // Màu xanh MISA
+      height: 48px;
+    }
+  }
+}
+
+.app-main-content {
+  background-color: #e3f2fd; // Màu nền xanh nhạt của Dashboard MISA
+  padding: 24px;
+}
+
+// Style cho link đang active
+.active-link {
+  background-color: #e3f2fd;
+  color: #0089ff !important;
+  border-right: 4px solid #0089ff;
+}

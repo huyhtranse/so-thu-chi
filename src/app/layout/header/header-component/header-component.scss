@@ -1,0 +1,64 @@
+.app-header {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  height: 64px;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0 16px;
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      
+      .app-logo {
+        height: 32px;
+        border-radius: 4px;
+      }
+      
+      .app-title {
+        color: #007bff; // Màu xanh đặc trưng của MISA
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+    }
+
+    .user-welcome {
+      font-size: 1rem;
+      color: #333;
+      .user-name {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .notification-btn {
+      color: #555;
+    }
+
+    .avatar-container {
+      .user-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        cursor: pointer;
+        border: 1px solid #ddd;
+      }
+    }
+  }
+}
