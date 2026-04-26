@@ -85,3 +85,29 @@ src/
     │   ├── header/                 # Sử dụng <mat-toolbar>
     │   └── main-layout/            # Sử dụng <mat-sidenav-container>
     └── app.module.ts               # Import MaterialModule vào đây
+
+
+features/dashboard/
+├── components/                 # Các component con chỉ dùng cho Dashboard
+│   ├── balance-card/           # Thẻ Tổng số dư (màu xanh)
+│   ├── overview-chart/         # Biểu đồ cột Tổng quan
+│   ├── expense-pie-chart/      # Biểu đồ tròn Chi tiền
+│   └── recent-transactions/    # Danh sách Ghi chép gần đây
+├── pages/
+│   └── dashboard-home/         # Component cha (Shell) - Nơi chứa Grid Layout chúng ta vừa viết
+├── dashboard.routes.ts         # Định nghĩa route cho trang này
+└── dashboard.service.ts        # Service riêng để fetch dữ liệu cho Dashboard
+
+features/dashboard/
+├── components/
+│   ├── balance-card/          # Block 1: Tổng số dư
+│   ├── overview-chart/        # Block 2: Tổng quan (Bar chart)
+│   ├── income-stat/           # Block 3: Thu tiền
+│   ├── expense-stat/          # Block 4: Chi tiền (Pie chart)
+│   ├── recent-history/        # Block 5: Ghi chép gần đây
+│   ├── spending-calendar/     # Block 6: Lịch chi tiêu (Mới)
+│   └── account-list/          # Block 7: Danh sách tài khoản (Mới)
+└── pages/
+    └── dashboard-home/        # Component cha điều phối Layout
+
+Component  →  Store (signal)  →  Service (API)
