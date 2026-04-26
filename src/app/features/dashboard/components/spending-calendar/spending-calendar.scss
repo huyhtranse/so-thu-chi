@@ -1,0 +1,73 @@
+.calendar-card {
+  border-radius: 12px;
+  
+  mat-card-header {
+    justify-content: space-between;
+    padding: 8px 16px;
+    mat-card-title { font-size: 16px; font-weight: 600; }
+  }
+}
+
+.calendar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px 0;
+  
+  .month-label { font-weight: 600; font-size: 16px; margin: 0 16px; }
+  mat-icon { color: #666; }
+  // Xoay icon double_arrow cho nút lùi
+  button:first-child mat-icon { transform: rotate(180deg); }
+}
+
+.quick-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background: #f8faff;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+
+  .summary-box {
+    text-align: center;
+    .label { display: block; font-size: 12px; color: #777; margin-bottom: 4px; }
+    .val { font-weight: 600; font-size: 14px; }
+    .income { color: #4caf50; }
+    .expense { color: #f44336; }
+  }
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+
+  th {
+    padding: 8px;
+    font-size: 13px;
+    color: #888;
+    border: 1px solid #eee;
+    font-weight: 400;
+  }
+
+  td {
+    height: 80px;
+    border: 1px solid #eee;
+    vertical-align: top;
+    padding: 6px;
+    
+    .date-num { font-size: 13px; color: #333; }
+    &.other-month { background-color: #fafafa; .date-num { color: #ccc; } }
+    &.sun .date-num { color: #f44336; }
+  }
+
+  .cell-data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 11px;
+    margin-top: 8px;
+    .inc { color: #4caf50; }
+    .exp { color: #f44336; }
+  }
+}

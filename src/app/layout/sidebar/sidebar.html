@@ -1,0 +1,70 @@
+<div class="sidebar-wrapper">
+  <div class="action-section">
+    <button mat-flat-button color="primary" class="btn-add-record">
+      <mat-icon>add</mat-icon>
+      <span>Thêm ghi chép</span>
+      <mat-icon class="arrow-drop">arrow_drop_down</mat-icon>
+    </button>
+  </div>
+
+  <mat-nav-list class="menu-list">
+    <a mat-list-item routerLink="/dashboard" routerLinkActive="active-item">
+      <mat-icon matListItemIcon>dashboard</mat-icon>
+      <span matListItemTitle>Trang chủ</span>
+    </a>
+
+    <a mat-list-item routerLink="/accounts">
+      <mat-icon matListItemIcon>account_balance_wallet</mat-icon>
+      <span matListItemTitle>Tài khoản</span>
+    </a>
+
+    <mat-expansion-panel [class.mat-elevation-z0]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>edit_note</mat-icon>
+          <span>Ghi chép</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-nav-list class="sub-menu">
+        <a mat-list-item routerLink="/history">Lịch sử ghi chép</a>
+      </mat-nav-list>
+    </mat-expansion-panel>
+
+    <a mat-list-item routerLink="/bank-connect">
+      <mat-icon matListItemIcon>account_balance</mat-icon>
+      <span matListItemTitle>Kết nối ngân hàng</span>
+    </a>
+
+    <a mat-list-item routerLink="/reports">
+      <mat-icon matListItemIcon>bar_chart</mat-icon>
+      <span matListItemTitle>Báo cáo</span>
+    </a>
+
+    <mat-expansion-panel [class.mat-elevation-z0]="true" [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>settings_suggest</mat-icon>
+          <span>Tiện ích</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-nav-list class="sub-menu">
+        <a mat-list-item routerLink="/tax">Tính thuế TNCN</a>
+        <a mat-list-item routerLink="/currency">Tra cứu tỷ giá</a>
+        <a mat-list-item routerLink="/savings">Tính lãi tiết kiệm</a>
+      </mat-nav-list>
+    </mat-expansion-panel>
+  </mat-nav-list>
+
+  <div class="spacer"></div>
+
+  <mat-nav-list class="menu-footer">
+    <a mat-list-item>
+      <mat-icon matListItemIcon>chat_bubble_outline</mat-icon>
+      <span matListItemTitle>Hỗ trợ khách hàng</span>
+    </a>
+    <a mat-list-item>
+      <mat-icon matListItemIcon>chevron_left</mat-icon>
+      <span matListItemTitle>Thu gọn</span>
+    </a>
+  </mat-nav-list>
+</div>

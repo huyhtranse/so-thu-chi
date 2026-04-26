@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeaderComponent } from './header-component';
+import { RecentHistory } from './recent-history';
 
-describe('HeaderComponent', () => {
-  let component: HeaderComponent;
-  let fixture: ComponentFixture<HeaderComponent>;
+describe('RecentHistory', () => {
+  let component: RecentHistory;
+  let fixture: ComponentFixture<RecentHistory>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HeaderComponent],
+      imports: [RecentHistory],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(HeaderComponent);
+    fixture = TestBed.createComponent(RecentHistory);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

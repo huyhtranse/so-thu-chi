@@ -1,0 +1,35 @@
+<mat-card class="account-card">
+  <mat-card-header>
+    <mat-card-title>Danh sách tài khoản</mat-card-title>
+    <div class="card-actions">
+      <button mat-icon-button><mat-icon>refresh</mat-icon></button>
+      <button mat-icon-button><mat-icon>fullscreen</mat-icon></button>
+    </div>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-tab-group animationDuration="0ms">
+      <mat-tab label="Tài khoản">
+        <mat-nav-list class="account-list">
+          <a mat-list-item class="account-item">
+            <div matListItemIcon class="icon-box acb-bg">
+              <mat-icon>account_balance</mat-icon>
+            </div>
+            <span matListItemTitle class="account-name">ACB</span>
+            <span matListItemLine class="account-balance">0 đ</span>
+          </a>
+
+          <a mat-list-item class="account-item active">
+            <div matListItemIcon class="icon-box wallet-bg">
+              <mat-icon>account_balance_wallet</mat-icon>
+            </div>
+            <span matListItemTitle class="account-name">Ví</span>
+            <span matListItemLine class="account-balance">2.864.051 đ</span>
+          </a>
+        </mat-nav-list>
+      </mat-tab>
+      <mat-tab label="Sổ tiết kiệm"></mat-tab>
+      <mat-tab label="Tích lũy"></mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
