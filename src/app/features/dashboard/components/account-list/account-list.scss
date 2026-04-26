@@ -1,0 +1,42 @@
+.account-card {
+  border-radius: 12px;
+  height: 100%;
+  
+  mat-card-header {
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    mat-card-title { font-size: 16px; font-weight: 600; color: #333; }
+    .card-actions mat-icon { font-size: 20px; color: #666; }
+  }
+
+  ::ng-deep .mat-mdc-tab-body-wrapper { margin-top: 12px; }
+}
+
+.account-item {
+  margin-bottom: 12px;
+  border-radius: 8px !important;
+  background-color: #f4f9ff; // Màu xanh nhạt nhẹ
+  transition: all 0.2s;
+
+  &:hover { background-color: #e3f2fd; }
+
+  &.active {
+    background-color: #e3f2fd;
+    border-left: 4px solid #0089ff;
+    .account-name { font-weight: 600; color: #0089ff; }
+  }
+
+  .icon-box {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: white;
+    mat-icon { font-size: 24px; color: #0089ff; }
+  }
+
+  .account-balance { color: #666; font-size: 13px; }
+}

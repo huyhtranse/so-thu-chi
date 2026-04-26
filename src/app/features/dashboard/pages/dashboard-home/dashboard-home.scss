@@ -1,0 +1,87 @@
+.dashboard-container {
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .page-title { font-size: 20px; font-weight: 600; margin: 0; }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .time-filter { width: 200px; ::ng-deep .mat-mdc-text-field-wrapper { background: white; } }
+    }
+  }
+
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; // Chia làm 3 cột bằng nhau
+    gap: 20px;
+    align-items: start;
+  }
+
+  .grid-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  mat-card {
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
+    border: none;
+
+    mat-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      mat-card-title { font-size: 16px; font-weight: 600; }
+    }
+  }
+}
+
+.dashboard-bottom-grid {
+  display: grid;
+  // Chia grid thành 3 cột bằng nhau, cột đầu tiên chiếm 2 phần (2fr), cột sau chiếm 1 phần (1fr)
+  grid-template-columns: 2fr 1fr; 
+  gap: 20px;            // Khoảng cách giữa 2 block (khớp với dashboard-grid phía trên)
+  margin-top: 20px;     // Cách hàng trên một khoảng
+  align-items: stretch; // Đảm bảo 2 card luôn cao bằng nhau dù nội dung bên trong dài ngắn khác nhau
+
+  // Style chung cho các component con khi được đặt vào grid này
+  app-spending-calendar,
+  app-account-list {
+    display: block;
+    height: 100%;
+  }
+}
+
+/* --- Responsive cho màn hình nhỏ hơn --- */
+
+// Cho máy tính bảng hoặc màn hình trung bình
+@media (max-width: 1200px) {
+  .dashboard-bottom-grid {
+    // Vẫn giữ 2 cột nhưng thu hẹp khoảng cách nếu cần
+    gap: 16px;
+  }
+}
+
+// Cho điện thoại hoặc khi màn hình quá hẹp
+@media (max-width: 992px) {
+  .dashboard-bottom-grid {
+    // Chuyển từ hàng ngang thành hàng dọc (Stack)
+    grid-template-columns: 1fr;
+    
+    // Tùy chọn: Đảo thứ tự nếu muốn Danh sách tài khoản hiện lên trước trên mobile
+    /* app-account-list { order: 1; }
+    app-spending-calendar { order: 2; }
+    */
+  }
+}
+
+// Responsive cho Mobile
+@media (max-width: 1024px) {
+  .dashboard-grid { grid-template-columns: 1fr; }
+}

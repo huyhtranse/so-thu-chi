@@ -1,0 +1,24 @@
+<mat-card class="card-recent">
+        <mat-card-header>
+          <mat-card-title>Ghi chép gần đây</mat-card-title>
+          <div class="actions">
+            <mat-icon>refresh</mat-icon>
+            <mat-icon>fullscreen</mat-icon>
+          </div>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-list>
+            @for (item of [1,2,3,4,5]; track item) {
+            <mat-list-item class="transaction-item">
+              <div matListItemAvatar class="item-icon">
+                <mat-icon>fastfood</mat-icon>
+              </div>
+              <div matListItemTitle class="item-title">Snack</div>
+              <div matListItemLine class="item-date">22/04/2026</div>
+              <div class="item-amount expense">35.000 đ</div>
+              <div class="item-account"><mat-icon>account_balance_wallet</mat-icon> Ví</div>
+            </mat-list-item>
+            }
+          </mat-list>
+        </mat-card-content>
+      </mat-card>

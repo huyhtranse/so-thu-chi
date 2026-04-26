@@ -1,0 +1,37 @@
+<div class="dashboard-container">
+  <div class="dashboard-header">
+    <h1 class="page-title">Trang chủ</h1>
+    <div class="header-actions">
+      <button mat-icon-button><mat-icon>refresh</mat-icon></button>
+      <button mat-icon-button><mat-icon>settings</mat-icon></button>
+      <mat-form-field appearance="outline" class="time-filter">
+        <mat-label>Thời gian</mat-label>
+        <mat-select value="this-month">
+          <mat-option value="this-month">Tháng này</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="dashboard-grid">
+    
+    <div class="grid-col">
+      <app-balance-card [balance]="store.total()"></app-balance-card>
+      <app-overview-chart [stats]="store.data()"></app-overview-chart>
+    </div>
+
+    <div class="grid-col">
+      <app-income-stat></app-income-stat>
+      <app-expense-stat></app-expense-stat>
+    </div>
+
+    <div class="grid-col">
+      <app-recent-history [items]="store.data()"></app-recent-history>
+    </div>
+
+  </div>
+  <div class="dashboard-bottom-grid">
+    <app-spending-calendar></app-spending-calendar>
+    <app-account-list></app-account-list>
+  </div>
+</div>

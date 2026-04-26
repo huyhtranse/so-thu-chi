@@ -1,0 +1,59 @@
+<mat-card class="calendar-card">
+  <mat-card-header>
+    <mat-card-title>Lịch chi tiêu tháng</mat-card-title>
+    <button mat-icon-button><mat-icon>refresh</mat-icon></button>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="calendar-nav">
+      <button mat-icon-button><mat-icon>double_arrow</mat-icon></button>
+      <button mat-icon-button><mat-icon>chevron_left</mat-icon></button>
+      <span class="month-label">Tháng 2 năm 2025</span>
+      <button mat-icon-button><mat-icon>chevron_right</mat-icon></button>
+      <button mat-icon-button><mat-icon>double_arrow</mat-icon></button>
+    </div>
+
+    <div class="quick-summary">
+      <div class="summary-box">
+        <span class="label">Tổng thu</span>
+        <span class="val income">0 đ</span>
+      </div>
+      <div class="summary-box">
+        <span class="label">Tổng chi</span>
+        <span class="val expense">7.659.000 đ</span>
+      </div>
+      <div class="summary-box">
+        <span class="label">Chênh lệch</span>
+        <span class="val diff">-7.659.000 đ</span>
+      </div>
+    </div>
+
+    <table class="calendar-table">
+      <thead>
+        <tr>
+          <th>T2</th><th>T3</th><th>T4</th><th>T5</th><th>T6</th><th>T7</th><th class="sun">CN</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="other-month">27</td><td class="other-month">28</td><td class="other-month">29</td><td class="other-month">30</td><td class="other-month">31</td>
+          <td>
+            <span class="date-num">1</span>
+            <div class="cell-data">
+              <div class="inc">0 đ</div>
+              <div class="exp">3.838.000 đ</div>
+            </div>
+          </td>
+          <td class="sun">2</td>
+        </tr>
+        <tr>
+          <td>3</td><td>4</td>
+          <td>
+            <span class="date-num">5</span>
+            <div class="cell-data"><div class="exp">289.000 đ</div></div>
+          </td>
+          </tr>
+      </tbody>
+    </table>
+  </mat-card-content>
+</mat-card>
