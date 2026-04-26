@@ -1,19 +1,3 @@
-<div class="app-wrapper">
-  <app-header class="app-header-container"></app-header>
-
-  <mat-sidenav-container class="app-sidenav-container">
-    
-    <mat-sidenav #sidenav mode="side" opened class="app-sidebar">
-      <div class="sidebar-content">
-        <app-sidebar></app-sidebar>
-      </div>
-    </mat-sidenav>
-
-    <mat-sidenav-content class="app-main-content">
-      <div class="content-wrapper">
-        <app-dashboard-home></app-dashboard-home>
-      </div>
-    </mat-sidenav-content>
-
-  </mat-sidenav-container>
-</div>
+<app-main-layout>
+  <app-dashboard-home></app-dashboard-home>
+</app-main-layout>

@@ -1,13 +1,11 @@
 import { Component, signal } from '@angular/core';
-import { Header } from './layout/header/header';
-import { Sidebar } from './layout/sidebar/sidebar';
+import { MainLayout } from './layout/main-layout/main-layout';
 import { DashboardHome } from './features/dashboard/pages/dashboard-home/dashboard-home';
-import { MATERIAL_IMPORTS } from './shared/material-imports';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MATERIAL_IMPORTS, Header, Sidebar, DashboardHome],
+  imports: [MainLayout, DashboardHome],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

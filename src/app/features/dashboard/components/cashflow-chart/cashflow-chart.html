@@ -1,0 +1,25 @@
+<mat-card class="cashflow-card">
+    <mat-card-header>
+        <div class="title-group">
+            <mat-card-title>Tình hình thu chi</mat-card-title>
+            <span class="subtitle">(12 tháng gần đây)</span>
+        </div>
+        <div class="actions">
+            <button mat-icon-button><mat-icon>refresh</mat-icon></button>
+            <button mat-icon-button><mat-icon>fullscreen</mat-icon></button>
+        </div>
+    </mat-card-header>
+
+    <mat-card-content>
+        <div class="unit-label">Triệu</div>
+
+        <div class="chart-container">
+            <div class="chart-placeholder">
+                <div class="chart-container">
+                    <canvas baseChart [data]="barChartData" [options]="barChartOptions" [type]="barChartType">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
