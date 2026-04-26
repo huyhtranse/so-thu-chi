@@ -1,11 +1,13 @@
 import { Component, signal } from '@angular/core';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './layout/header/header-component/header-component';
+import { Header } from './layout/header/header';
+import { Sidebar } from './layout/sidebar/sidebar';
+import { DashboardHome } from './features/dashboard/pages/dashboard-home/dashboard-home';
+import { MATERIAL_IMPORTS } from './shared/material-imports';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MatSidenavModule, HeaderComponent],
+  standalone: true,
+  imports: [MATERIAL_IMPORTS, Header, Sidebar, DashboardHome],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
