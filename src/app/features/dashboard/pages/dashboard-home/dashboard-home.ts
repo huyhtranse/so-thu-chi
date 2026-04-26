@@ -8,6 +8,7 @@ import { RecentHistory } from "../../components/recent-history/recent-history";
 import { SpendingCalendar } from "../../components/spending-calendar/spending-calendar";
 import { AccountList } from "../../components/account-list/account-list";
 import { DashboardStore } from '../../dashboard.store';
+import { CashflowChart } from "../../components/cashflow-chart/cashflow-chart";
 
 @Component({
   selector: 'app-dashboard-home',
@@ -20,7 +21,8 @@ import { DashboardStore } from '../../dashboard.store';
     ExpenseStat,
     RecentHistory,
     SpendingCalendar,
-    AccountList
+    AccountList,
+    CashflowChart
 ],
   templateUrl: './dashboard-home.html',
   styleUrl: './dashboard-home.scss',

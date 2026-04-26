@@ -58,6 +58,16 @@
   }
 }
 
+.dashboard-full-width-row {
+  margin-top: 20px; // Khoảng cách với hàng trên
+  width: 100%;
+  
+  app-cashflow-chart {
+    display: block;
+    width: 100%;
+  }
+}
+
 /* --- Responsive cho màn hình nhỏ hơn --- */
 
 // Cho máy tính bảng hoặc màn hình trung bình

@@ -8,8 +8,13 @@
   </mat-card-header>
   <mat-card-content>
     <div class="chart-wrapper">
-      <div class="pie-placeholder" style="width: 150px; height: 150px; border: 15px solid #ffcc29; border-radius: 50%;">
-      </div>
+      <canvas
+        baseChart
+        [data]="doughnutChartData"
+        [options]="doughnutChartOptions"
+        type="doughnut"
+        style="max-width: 150px; max-height: 150px;">
+      </canvas>
     </div>
 
     <div class="chart-legend">
