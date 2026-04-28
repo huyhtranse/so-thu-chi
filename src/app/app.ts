@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
+import { MsalModule, MsalService } from '@azure/msal-angular';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,29 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App {
-  protected readonly title = signal('so-thu-chi-dashboard');
+export class App implements OnInit {
+  constructor(
+    private msalService: MsalService,
+    private router: Router
+  ) {}
+
+  async ngOnInit(): Promise<void> {
+    await this.msalService.instance.initialize();
+
+    this.msalService.handleRedirectObservable()
+      .subscribe((response) => {
+        if (response?.account) {
+          this.msalService.instance.setActiveAccount(
+            response.account
+          );
+          this.router.navigate(['/dashboard']);
+        }
+      });
+
+    const account = this.msalService.instance.getActiveAccount();
+
+    if (account) {
+      this.router.navigate(['/dashboard']);
+    }
+  }
 }
