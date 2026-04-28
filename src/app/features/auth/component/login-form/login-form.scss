@@ -1,0 +1,126 @@
+/* login.component.scss */
+$misa-blue: #0070c0;
+$misa-light-blue: #00b0f0;
+
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #e9ecef;
+}
+
+.login-card {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  min-height: 550px;
+  width: 950px;
+  background: white;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+
+  // PANEL BÊN TRÁI
+  .side-panel {
+    background: linear-gradient(135deg, $misa-light-blue 0%, $misa-blue 100%);
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .app-logo-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .logo-icon { font-size: 32px; width: 32px; height: 32px; }
+      .app-name { font-weight: 500; font-size: 1.2rem; }
+    }
+
+    h1 { font-size: 1.8rem; margin-top: 30px; font-weight: bold; line-height: 1.4; }
+
+    .illustration-container {
+      display: flex;
+      justify-content: center;
+      .main-illustration {
+        font-size: 200px;
+        width: 200px;
+        height: 200px;
+        opacity: 0.8;
+      }
+    }
+  }
+
+  // PANEL BÊN PHẢI (CHỨA FORM)
+  .form-panel {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    .misa-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+
+      .misa-logo-text {
+        font-weight: 900;
+        font-size: 24px;
+        color: $misa-blue;
+        span { font-size: 12px; vertical-align: top; }
+      }
+
+      .anniversary-badge {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: #ff9800;
+        font-size: 12px;
+        mat-icon { font-size: 18px; width: 18px; height: 18px; }
+      }
+    }
+
+    // CĂN GIỮA FORM TẠI ĐÂY
+    .form-content {
+      flex: 1; // Chiếm hết không gian còn lại
+      display: flex;
+      flex-direction: column;
+      justify-content: center; // Căn giữa theo chiều dọc
+
+      h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-weight: 500;
+      }
+
+      .full-width { width: 100%; margin-bottom: 10px; }
+
+      .form-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+
+        .btn-login {
+          padding: 25px 0;
+          font-size: 16px;
+          background-color: $misa-blue;
+        }
+
+        .forgot-btn { text-align: center; color: $misa-blue; }
+      }
+    }
+
+    .support-footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      color: #666;
+      font-size: 14px;
+      margin-top: 20px;
+      mat-icon { font-size: 18px; width: 18px; height: 18px; }
+    }
+  }
+}

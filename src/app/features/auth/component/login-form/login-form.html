@@ -1,0 +1,69 @@
+<div class="login-wrapper">
+  <div class="login-card">
+    
+    <div class="side-panel">
+      <div class="brand-info">
+        <div class="app-logo-group">
+          <mat-icon class="logo-icon">account_balance_wallet</mat-icon>
+          <span class="app-name">Sổ thu chi MISA</span>
+        </div>
+        <h1>PHẦN MỀM QUẢN LÝ TÀI CHÍNH CÁ NHÂN</h1>
+      </div>
+      
+      <div class="illustration-container">
+        <mat-icon class="main-illustration">insights</mat-icon>
+      </div>
+    </div>
+
+    <div class="form-panel">
+      <div class="misa-header">
+        <div class="misa-logo-text">MISA<span>®</span></div>
+        <div class="anniversary-badge">
+          <mat-icon>verified</mat-icon>
+          <span>30 Năm Phụng sự</span>
+        </div>
+      </div>
+
+      <div class="form-content">
+        <h2>Đăng nhập</h2>
+
+        <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Email hoặc số điện thoại</mat-label>
+            <input matInput formControlName="username" placeholder="Ví dụ: example@gmail.com">
+            <mat-icon matPrefix>person</mat-icon> 
+            @if (loginForm.get('username')?.hasError('required')) {
+              <mat-error>Vui lòng nhập email hoặc số điện thoại</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Mật khẩu</mat-label>
+            <input matInput [type]="isPasswordVisible ? 'text' : 'password'" formControlName="password">
+            <mat-icon matPrefix>lock</mat-icon>
+            <button mat-icon-button matSuffix type="button" (click)="isPasswordVisible = !isPasswordVisible">
+              <mat-icon>{{isPasswordVisible ? 'visibility' : 'visibility_off'}}</mat-icon>
+            </button>
+            @if (loginForm.get('password')?.hasError('required')) {
+              <mat-error>Mật khẩu không được để trống</mat-error>
+            }
+          </mat-form-field>
+
+          <div class="form-actions">
+            <button mat-flat-button color="primary" class="btn-login" [disabled]="loginForm.invalid">
+              ĐĂNG NHẬP
+            </button>
+            <button mat-button type="button" color="primary" class="forgot-btn">Quên mật khẩu?</button>
+          </div>
+        </form>
+      </div>
+      
+      <div class="support-footer">
+        <mat-icon>help_outline</mat-icon>
+        <span>Hỗ trợ</span>
+      </div>
+    </div>
+
+  </div>
+</div>

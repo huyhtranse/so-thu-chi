@@ -1,11 +1,10 @@
 import { Component, signal } from '@angular/core';
-import { MainLayout } from './layout/main-layout/main-layout';
-import { DashboardHome } from './features/dashboard/pages/dashboard-home/dashboard-home';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MainLayout, DashboardHome],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

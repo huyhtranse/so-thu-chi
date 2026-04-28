@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { Header } from '../header/header';
 import { Sidebar } from '../sidebar/sidebar';
 import { MATERIAL_IMPORTS } from '../../shared/material-imports';
@@ -10,6 +11,7 @@ import { MATERIAL_IMPORTS } from '../../shared/material-imports';
     MATERIAL_IMPORTS,
     Header,
     Sidebar,
+    RouterOutlet,
   ],
   templateUrl: './main-layout.html',
   styleUrl: './main-layout.scss',
