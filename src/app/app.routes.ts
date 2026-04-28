@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { MsalGuard } from '@azure/msal-angular';
 
 export const routes: Routes = [
   // 1. Khi người dùng vào địa chỉ trang web mặc định, điều hướng ngay sang /login
@@ -14,12 +15,13 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     loadComponent: () => import('./layout/main-layout/main-layout').then(m => m.MainLayout),
+    canActivate: [MsalGuard], // Bảo vệ route này
     children: [
       {
         path: '',
         loadComponent: () => import('./features/dashboard/pages/dashboard-home/dashboard-home').then(m => m.DashboardHome)
       }
-    ]
+    ],
     // Sau này bạn sẽ thêm AuthGuard ở đây để bảo vệ dashboard
     // canActivate: [AuthGuard]
   },
