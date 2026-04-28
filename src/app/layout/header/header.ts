@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { MATERIAL_IMPORTS } from '../../shared/material-imports';
 
 @Component({
@@ -9,5 +9,5 @@ import { MATERIAL_IMPORTS } from '../../shared/material-imports';
   styleUrl: './header.scss',
 })
 export class Header {
-  userName = "Tran Huy"
+  userName = signal('Trần Huy');
 }

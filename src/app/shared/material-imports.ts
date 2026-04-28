@@ -9,6 +9,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatInputModule } from '@angular/material/input';
 
 export const MATERIAL_IMPORTS = [
   MatToolbarModule,
@@ -21,5 +22,6 @@ export const MATERIAL_IMPORTS = [
   MatCardModule,
   MatListModule,
   MatSidenavModule,
-  MatTabsModule
+  MatTabsModule,
+  MatInputModule
 ];
