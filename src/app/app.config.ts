@@ -2,6 +2,9 @@ import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChang
 import { provideRouter } from '@angular/router';
 import { MSAL_GUARD_CONFIG, MSAL_INSTANCE, MsalBroadcastService, MsalGuard, MsalService } from '@azure/msal-angular';
 import { IPublicClientApplication, PublicClientApplication } from '@azure/msal-browser';
+import {
+  provideAnimationsAsync
+} from '@angular/platform-browser/animations/async';
 
 import { routes } from './app.routes';
 import { msalConfig, MSALGuardConfigFactory } from './core/auth/models/auth-config';
@@ -15,7 +18,7 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     // provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-
+    provideAnimationsAsync(),
     {
       provide: MSAL_INSTANCE,
       useFactory: MSALInstanceFactory

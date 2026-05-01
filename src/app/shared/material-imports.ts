@@ -10,6 +10,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
 
 export const MATERIAL_IMPORTS = [
   MatToolbarModule,
@@ -23,5 +24,6 @@ export const MATERIAL_IMPORTS = [
   MatListModule,
   MatSidenavModule,
   MatTabsModule,
-  MatInputModule
+  MatInputModule,
+  MatDialogModule
 ];
