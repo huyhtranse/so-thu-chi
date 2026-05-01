@@ -1,0 +1,53 @@
+<div class="dialog-container">
+    <div class="dialog-header">
+        <h2>Thêm ghi chép</h2>
+        <button mat-icon-button (click)="close()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <mat-tab-group>
+        <mat-tab label="Chi tiền">
+            <div class="form-grid">
+                <mat-form-field appearance="outline">
+                    <mat-label>Số tiền</mat-label>
+                    <input matInput formControlName="amount">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Hạng mục</mat-label>
+                    <mat-select formControlName="category">
+                        <mat-option value="food">
+                            Ăn uống
+                        </mat-option>
+                        <mat-option value="coffee">
+                            Cafe
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Tài khoản</mat-label>
+                    <mat-select formControlName="account">
+                        <mat-option value="wallet">
+                            Ví
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Diễn giải</mat-label>
+                    <textarea matInput rows="4" formControlName="note"></textarea>
+                </mat-form-field>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+
+    <div class="dialog-actions">
+        <button mat-button (click)="close()">
+            Hủy
+        </button>
+        <button mat-flat-button color="primary" (click)="save()">
+            Lưu
+        </button>
+    </div>
+</div>
