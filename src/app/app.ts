@@ -1,6 +1,6 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
-import { MsalModule, MsalService } from '@azure/msal-angular';
+import { MsalService } from '@azure/msal-angular';
 
 @Component({
   selector: 'app-root',

@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { MATERIAL_IMPORTS } from '../../../../shared/material-imports';
 import { BalanceCard } from "../../components/balance-card/balance-card";
 import { OverviewChart } from "../../components/overview-chart/overview-chart";
