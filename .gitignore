@@ -43,5 +43,10 @@ __screenshots__/
 .DS_Store
 Thumbs.db
 
+# Environment variables (sensitive data)
+.env
+.env.local
+.env.*.local
+
 # Github
 .github/
