@@ -26,9 +26,25 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
       <mat-nav-list class="sub-menu">
-        <a mat-list-item routerLink="/history">Lịch sử ghi chép</a>
+        <a mat-list-item routerLink="/notes/income-expense" (click)="openAddTransactionDialog()">
+          <mat-icon matListItemIcon>receipt_long</mat-icon>
+          <span matListItemTitle>Ghi chép thu chi</span>
+        </a>
+        <a mat-list-item routerLink="/notes/batch">
+          <mat-icon matListItemIcon>edit</mat-icon>
+          <span matListItemTitle>Ghi chép hàng loạt</span>
+        </a>
+        <a mat-list-item routerLink="/notes/import">
+          <mat-icon matListItemIcon>upload_file</mat-icon>
+          <span matListItemTitle>Nhập bằng excel</span>
+        </a>
       </mat-nav-list>
     </mat-expansion-panel>
+
+    <a mat-list-item routerLink="/transactions">
+      <mat-icon matListItemIcon>history</mat-icon>
+      <span matListItemTitle>Lịch sử ghi chép</span>
+    </a>
 
     <a mat-list-item routerLink="/bank-connect">
       <mat-icon matListItemIcon>account_balance</mat-icon>

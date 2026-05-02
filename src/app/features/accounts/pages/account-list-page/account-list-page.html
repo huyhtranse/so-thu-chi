@@ -1,0 +1,162 @@
+<div class="account-list-container">
+  <div class="page-header">
+    <h1>Danh sách tài khoản</h1>
+  </div>
+
+  <!-- Tabs -->
+  <mat-tab-group [selectedIndex]="selectedTab()" (selectedIndexChange)="selectedTab.set($event)" class="tabs-section">
+    <!-- Tab 1: Tài khoản của tôi -->
+    <mat-tab label="Tài khoản của tôi">
+      <div class="tab-content">
+        <!-- Search Bar -->
+        <div class="search-section">
+          <mat-form-field class="search-field">
+            <mat-label>Tìm kiếm theo tên</mat-label>
+            <input
+              matInput
+              [(ngModel)]="searchQuery"
+              (input)="onSearchChange()"
+              placeholder="Nhập tên tài khoản..."
+            />
+            <mat-icon matPrefix>search</mat-icon>
+          </mat-form-field>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters-section">
+          <mat-form-field>
+            <mat-label>Loại tài khoản</mat-label>
+            <mat-select
+              [(ngModel)]="selectedAccountType"
+              (selectionChange)="onFilterChange()"
+            >
+              <mat-option *ngFor="let type of accountTypes" [value]="type.value">
+                {{ type.label }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Trạng thái</mat-label>
+            <mat-select
+              [(ngModel)]="selectedStatus"
+              (selectionChange)="onFilterChange()"
+            >
+              <mat-option *ngFor="let status of statuses" [value]="status.value">
+                {{ status.label }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Bảo cáo</mat-label>
+            <mat-select>
+              <mat-option value="all">Tất cả</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <!-- Total Balance -->
+        <div class="total-balance-section">
+          <span class="balance-label">Tổng tiền:</span>
+          <span class="balance-value">{{ formatCurrency(totalBalance()) }}</span>
+        </div>
+
+        <!-- Table -->
+        <div class="table-section">
+          <table mat-table [dataSource]="dataSource" class="accounts-table">
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef>Tên tài khoản</th>
+              <td mat-cell *matCellDef="let element">
+                <div class="account-name">
+                  <mat-icon class="account-icon">{{ element.icon || 'account_balance' }}</mat-icon>
+                  <span>{{ element.name }}</span>
+                </div>
+              </td>
+            </ng-container>
+
+            <!-- Balance Column -->
+            <ng-container matColumnDef="balance">
+              <th mat-header-cell *matHeaderCellDef>Số dư</th>
+              <td mat-cell *matCellDef="let element">
+                {{ formatCurrency(element.balance) }}
+              </td>
+            </ng-container>
+
+            <!-- Status Column -->
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef>Trạng thái</th>
+              <td mat-cell *matCellDef="let element">
+                <span
+                  class="status-badge"
+                  [ngClass]="{
+                    'status-active': element.status === 'active',
+                    'status-inactive': element.status === 'inactive'
+                  }"
+                >
+                  {{ getStatusLabel(element.status) }}
+                </span>
+              </td>
+            </ng-container>
+
+            <!-- Account Type Column -->
+            <ng-container matColumnDef="accountType">
+              <th mat-header-cell *matHeaderCellDef>Loại tài khoản</th>
+              <td mat-cell *matCellDef="let element">
+                {{ element.accountType }}
+              </td>
+            </ng-container>
+
+            <!-- Actions Column -->
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef></th>
+              <td mat-cell *matCellDef="let element">
+                <button mat-icon-button matTooltip="Chỉnh sửa">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button matTooltip="Xóa">
+                  <mat-icon>delete</mat-icon>
+                </button>
+                <button mat-icon-button [matMenuTriggerFor]="menu">
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item>Chi tiết</button>
+                  <button mat-menu-item>Thiết lập</button>
+                </mat-menu>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+
+          <!-- Pagination -->
+          <mat-paginator
+            [length]="totalItems()"
+            [pageSize]="pageSize()"
+            [pageSizeOptions]="[5, 10, 25, 50]"
+            (page)="onPageChange($event)"
+            showFirstLastButtons
+            aria-label="Select page of accounts"
+          ></mat-paginator>
+        </div>
+      </div>
+    </mat-tab>
+
+    <!-- Tab 2: Số tiết kiệm -->
+    <mat-tab label="Số tiết kiệm">
+      <div class="tab-content">
+        <p>Danh sách tài khoản tiết kiệm</p>
+      </div>
+    </mat-tab>
+
+    <!-- Tab 3: Tích lũy -->
+    <mat-tab label="Tích lũy">
+      <div class="tab-content">
+        <p>Danh sách tài khoản tích lũy</p>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

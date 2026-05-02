@@ -22,10 +22,34 @@ export const routes: Routes = [
         loadComponent: () => import('./features/dashboard/pages/dashboard-home/dashboard-home').then(m => m.DashboardHome)
       }
     ],
-    // Sau này bạn sẽ thêm AuthGuard ở đây để bảo vệ dashboard
-    // canActivate: [AuthGuard]
   },
 
-  // 4. Trang 404 (nếu có)
+  // 4. Accounts feature
+  {
+    path: 'accounts',
+    loadComponent: () => import('./layout/main-layout/main-layout').then(m => m.MainLayout),
+    canActivate: [MsalGuard],
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./features/accounts/accounts.routes').then(m => m.ACCOUNTS_ROUTES)
+      }
+    ]
+  },
+
+  // 5. Transactions feature
+  {
+    path: 'transactions',
+    loadComponent: () => import('./layout/main-layout/main-layout').then(m => m.MainLayout),
+    canActivate: [MsalGuard],
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./features/transactions/transactions.routes').then(m => m.TRANSACTIONS_ROUTES)
+      }
+    ]
+  },
+
+  // 6. Trang 404 (nếu có)
   { path: '**', redirectTo: 'login' }
 ];
