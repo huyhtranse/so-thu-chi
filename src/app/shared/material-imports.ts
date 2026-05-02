@@ -11,6 +11,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 
 export const MATERIAL_IMPORTS = [
   MatToolbarModule,
@@ -25,5 +28,8 @@ export const MATERIAL_IMPORTS = [
   MatSidenavModule,
   MatTabsModule,
   MatInputModule,
-  MatDialogModule
+  MatDialogModule,
+  MatTableModule,
+  MatMenuModule,
+  MatPaginatorModule
 ];
