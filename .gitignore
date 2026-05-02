@@ -48,5 +48,10 @@ Thumbs.db
 .env.local
 .env.*.local
 
+# Angular environment files with credentials
+src/environments/environment.ts
+src/environments/environment.development.ts
+src/environments/environment.*.ts
+
 # Github
 .github/
